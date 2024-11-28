@@ -1,0 +1,618 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:  'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #1a1a1a;
+}
+
+/* Header */
+.header {
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Adjusted padding for better layout */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; /* Ensures the logo stays on the left */
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px; /* Space between links */
+    justify-content: flex-end; /* Aligns navigation to the right */
+    margin-left: auto; /* Pushes navigation to the far right */
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header .nav a:hover {
+    color: #f4b400;
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 10%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Adds overlay shadow */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background: #E0D9CF;
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.feature {
+    flex: 1 1 400px;
+    max-width: 400px;
+    background: #E0D9CF;
+    border: 2px solid #444;
+    border-radius: 12px;
+    padding: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #315736;
+}
+
+.feature p {
+    font-size: 18px;
+}
+
+.feature:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.feature:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    gap: 20px;
+}
+
+.content img {
+    max-width: 50%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.content-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content-text p {
+    margin-bottom: 20px;
+}
+
+.content-text .buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: #315736;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.content-text .buttons button:hover {
+    background: #fff;
+    color: #315736;
+}
+
+/* Chefs Section */
+.chefs {
+    text-align: center;
+    padding: 50px 10%;
+    background: #222;
+    color: #fff;
+}
+
+.chefs h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #315736;
+}
+
+.chefs p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .header .nav {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Carousel Section */
+.carousel {
+    position: relative;
+    width: 80%; /* Set a max width for the carousel */
+    margin: 40px auto; /* Centers the carousel */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-image {
+    width: 80%;  /* Set the image width to 80% of the carousel's width */
+    max-width: 500px;  /* Ensure the image does not grow beyond this size */
+    margin: 0 10px;  /* Add space between images */
+    display: block;
+    object-fit: cover; /* Ensure images cover the container without distortion */
+    border-radius: 10px; /* Optional: adds rounded corners to the images */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        width: 95%; /* Make carousel width responsive on smaller screens */
+    }
+    .carousel-image {
+        width: 90%; /* Adjust the image width for smaller screens */
+        max-width: none; /* Remove the max-width for responsiveness */
+    }
+}
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 50px 10%;
+    background: #222;
+    color: #fff;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #E0D9CF;
+}
+
+.contact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact .contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact .contact-info strong {
+    color: #315736;
+}  
+
+#corporate-page .hero {
+    background: url('images/hero_corporate.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 10%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Adds overlay shadow */
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:  'Cormorant Garamond', serif;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header .nav a:hover {
+    color: #315736;
+}
+
+/* Hero Section */
+
+
+#venue-page .hero {
+    background: url('images/venue_hero.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 10%;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+
+/* Venues Gallery Section */
+.venues-gallery {
+    padding: 50px 10%;
+    background: #222;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item img {
+    width: 90%; /* Set the image width to 90% of the container's size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px; /* Adds margin below the image */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 50px 10%;
+    background: #222;
+    color: #fff;
+}
+
+footer h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #E0D9CF;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Hero Section for Catering */
+#catering-page .hero {
+    background: url('images/catering_hero.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 10%;
+    color: #fff;
+}
+
+#catering-page .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#catering-page .hero p {
+    font-size: 18px;
+}
+
+/* Catering Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background: #333;
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.feature {
+    flex: 1 1 400px;
+    max-width: 400px;
+    background: #222;
+    border: 2px solid #444;
+    border-radius: 12px;
+    padding: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #315736;
+}
+
+.feature p {
+    font-size: 18px;
+}
+
+.feature:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.feature:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Catering Gallery Section */
+.venues-gallery {
+    padding: 50px 10%;
+    background: #222;
+}
+
+.venues-gallery h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #315736;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item img {
+    width: 90%; /* Set the image width to 90% of the container's size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 50px 10%;
+    background: #222;
+    color: #fff;
+}
+
+footer h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #315736;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Display images in one column on smaller screens */
+    }
+
+    .carousel {
+        width: 95%; /* Make carousel width responsive on smaller screens */
+    }
+
+    .carousel-image {
+        width: 90%; /* Adjust the image width for smaller screens */
+        max-width: none; /* Remove the max-width for responsiveness */
+    }
+}
+
+/* Catering Gallery Section */
+.catering-gallery {
+    padding: 50px 10%;
+    background: #222;
+}
+
+.catering-gallery h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #315736;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item img {
+    width: 100%; /* Ensure the image takes up full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .catering-gallery h2 {
+        font-size: 24px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Display images in one column on smaller screens */
+    }
+
+    .gallery-item img {
+        max-width: 90%; /* Limit the image width to 90% on smaller screens */
+    }
+}
+/* Hero Section for Catering */
+#catering-page .hero {
+    background: url('images/hero_catering.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 10%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Adds shadow effect */
+}
+
+#catering-page .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#catering-page .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
